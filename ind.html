@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Teen Mothers Deserve More — Brochure</title>
+<style>
+  @font-face { font-family: 'Archivo Black'; src: url('fonts/ArchivoBlack-Regular.ttf'); font-weight: 400; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Regular.ttf'); font-weight: 400; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Medium.ttf'); font-weight: 500; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-SemiBold.ttf'); font-weight: 600; }
+  @font-face { font-family: 'Barlow Condensed'; src: url('fonts/BarlowCondensed-Bold.ttf'); font-weight: 700; }
+  @font-face { font-family: 'Public Sans'; src: url('fonts/PublicSans-Regular.ttf'); font-weight: 400; }
+  @font-face { font-family: 'Public Sans'; src: url('fonts/PublicSans-Regular.ttf'); font-weight: 700; }
+  @font-face { font-family: 'Lora'; src: url('fonts/LoraItalic.ttf'); font-style: italic; font-weight: 400; }
+
+  :root{
+    --teal: #18889e;
+    --teal-deep: #0b4552;
+    --teal-deepest: #073139;
+    --ochre: #e0a836;
+    --ochre-deep: #c78a1e;
+    --ink: #16262a;
+    --cream: #f7f3ea;
+    --cream-2: #efe8d8;
+    --teal-tint: #e7f1f2;
+    --white: #ffffff;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html,body{ font-family:'Public Sans',sans-serif; color:var(--ink); zoom:1.3333333; width:297mm; height:420mm; overflow:hidden; }
+
+  .sheet{ width:297mm; height:210mm; position:relative; overflow:hidden; display:flex; page-break-after:always; }
+  .sheet:last-child{ page-break-after:auto; }
+  .panel{ width:99mm; height:210mm; position:relative; overflow:hidden; flex:0 0 99mm; }
+  .panel + .panel{ box-shadow: inset 1px 0 0 rgba(0,0,0,0.06); }
+
+  .weave{ position:absolute; inset:0; opacity:0.045; pointer-events:none;
+    background-image: repeating-linear-gradient(45deg, var(--ink) 0 2px, transparent 2px 14px); }
+
+  h1,h2,h3,h4{ font-weight:400; }
+  .eyebrow{ font-family:'Barlow Condensed'; font-weight:600; letter-spacing:0.3mm; font-size:4.6mm; }
+
+  /* ============ PANEL 1 : WHY THIS MATTERS ============ */
+  .p-context{ background:var(--cream); padding:12mm 10mm 8mm 12mm; }
+  .p-context .eyebrow{ color:var(--teal); }
+  .p-context h2{ font-family:'Archivo Black'; font-size:9mm; color:var(--teal-deepest); text-transform:uppercase; line-height:1.05; margin:2.5mm 0 5mm; }
+  .p-context p{ font-size:3.7mm; line-height:1.5; color:#3a3a36; margin-bottom:3.5mm; }
+  .p-context .statline{
+    margin-top:4mm; background:var(--teal); color:var(--white); border-radius:2mm; padding:5mm 6mm;
+  }
+  .statline .num{ font-family:'Archivo Black'; font-size:12mm; color:var(--ochre); line-height:0.9; }
+  .statline .cap{ font-family:'Barlow Condensed'; font-weight:600; font-size:4.2mm; line-height:1.25; margin-top:1.2mm; }
+  .statline .src{ font-size:2.9mm; opacity:0.75; margin-top:1.8mm; font-style:italic; }
+  .p-context .drivers{ margin-top:4mm; }
+  .p-context .drivers h4{ font-family:'Barlow Condensed'; font-weight:700; font-size:4.4mm; color:var(--teal-deepest); text-transform:uppercase; margin-bottom:1.8mm; }
+  .p-context .drivers ul{ list-style:none; }
+  .p-context .drivers li{ font-size:3.5mm; line-height:1.4; padding-left:4mm; position:relative; margin-bottom:1.3mm; color:#3a3a36; }
+  .p-context .drivers li::before{ content:''; position:absolute; left:0; top:1.7mm; width:1.6mm; height:1.6mm; border-radius:50%; background:var(--ochre); }
+
+  /* ============ PANEL 2 : BACK COVER ============ */
+  .p-back{ background:var(--teal-deepest); color:var(--white); padding:12mm 11mm; position:relative; }
+  .p-back .top .quote{ font-family:'Lora'; font-style:italic; font-size:5.6mm; line-height:1.5; color:var(--white); }
+  .p-back .top .quote::before{ content:'\201C'; color:var(--ochre); font-size:9mm; display:block; line-height:0.6; margin-bottom:1mm; font-family:Georgia,serif; }
+  .p-back .mid{ margin-top:7mm; }
+  .p-back .mid h4{ font-family:'Barlow Condensed'; font-weight:700; font-size:5mm; text-transform:uppercase; color:var(--ochre); margin-bottom:2.5mm; letter-spacing:0.3mm;}
+  .p-back .mid p{ font-size:3.7mm; line-height:1.5; opacity:0.92; }
+  .p-back .bottom{ position:absolute; bottom:12mm; left:11mm; right:11mm; border-top:0.4mm solid rgba(255,255,255,0.25); padding-top:5mm; }
+  .p-back .bottom img{ height:12mm; margin-bottom:3.5mm; }
+  .p-back .bottom .org{ font-family:'Barlow Condensed'; font-weight:600; font-size:4.4mm; line-height:1.4; }
+  .p-back .bottom .org b{ font-size:5.2mm; display:block; color:var(--white); }
+  .p-back .bottom .doc{ font-size:2.9mm; opacity:0.6; margin-top:3.5mm; line-height:1.5; }
+
+  /* ============ PANEL 3 : FRONT COVER ============ */
+  .p-cover{ background: linear-gradient(175deg, var(--teal-deepest) 0%, var(--teal-deep) 45%, var(--teal) 100%); height:100%; position:relative; }
+  .p-cover .logostrip{ padding:9mm 9mm 0 9mm; }
+  .p-cover .logostrip img{ height:11mm; }
+  .p-cover .ribbon{
+    margin:6mm 0 0 -3mm; background:var(--ochre); color:var(--teal-deepest); display:inline-block;
+    font-family:'Barlow Condensed'; font-weight:700; font-size:4.4mm; padding:2.6mm 6mm 2.6mm 9mm;
+    clip-path: polygon(0% 0%, 100% 0%, 95% 50%, 100% 100%, 0% 100%, 5% 50%);
+  }
+  .p-cover .headline{ padding:0 9mm; margin-top:5mm; }
+  .p-cover .headline h1{ font-family:'Archivo Black'; font-size:11mm; line-height:0.98; color:var(--white); text-transform:uppercase; }
+  .p-cover .headline h1 .accent{ color:var(--ochre); display:block; }
+  .p-cover .headline .tag{ margin-top:4mm; font-family:'Barlow Condensed'; font-weight:600; font-size:4.4mm; color:var(--white); border-top:0.5mm solid var(--ochre); padding-top:2.8mm; }
+  .p-cover .photo{ position:absolute; bottom:0; left:0; width:100%; height:100mm; }
+  .p-cover .photo img{ width:100%; height:100%; object-fit:cover; object-position:60% 15%; }
+  .p-cover .photo::before{ content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(7,49,57,0.15), rgba(7,49,57,0) 30%); }
+  .p-cover .locline{ position:absolute; bottom:6mm; left:9mm; right:9mm; font-family:'Barlow Condensed'; font-weight:600; font-size:3.6mm; color:var(--white); opacity:0.9; }
+
+  /* ============ PANEL 4 : EVERYONE HAS A ROLE ============ */
+  .p-roles{ background:var(--cream-2); padding:14mm 10mm 10mm 11mm; }
+  .p-roles .eyebrow{ color:var(--teal-deep); }
+  .p-roles h2{ font-family:'Archivo Black'; font-size:9.5mm; color:var(--teal-deepest); text-transform:uppercase; line-height:1.05; margin:3mm 0 5mm; }
+  .p-roles > p{ font-size:3.8mm; line-height:1.5; color:#3a3a36; margin-bottom:5mm; }
+  .role{ display:flex; gap:3.5mm; margin-bottom:4.2mm; align-items:flex-start; }
+  .role .icon{ flex:0 0 7mm; width:7mm; height:7mm; color:var(--teal); margin-top:0.5mm; }
+  .role h4{ font-family:'Barlow Condensed'; font-weight:700; font-size:4.4mm; color:var(--teal-deepest); text-transform:uppercase; margin-bottom:0.8mm; }
+  .role p{ font-size:3.6mm; line-height:1.42; color:#3a3a36; }
+
+  /* ============ PANEL 5 : WHAT YOU CAN DO ============ */
+  .p-cando{ background:var(--cream); padding:14mm 10mm 10mm 11mm; }
+  .p-cando .eyebrow{ color:var(--teal); }
+  .p-cando h2{ font-family:'Archivo Black'; font-size:9.5mm; color:var(--teal-deepest); text-transform:uppercase; line-height:1.05; margin:3mm 0 6mm; }
+  .audience{ margin-bottom:5.5mm; padding-left:4mm; border-left:1mm solid var(--ochre); }
+  .audience h4{ font-family:'Barlow Condensed'; font-weight:700; font-size:5mm; color:var(--teal-deepest); text-transform:uppercase; margin-bottom:1.5mm; }
+  .audience .msg{ font-family:'Lora'; font-style:italic; font-size:3.8mm; color:var(--teal-deep); line-height:1.42; margin-bottom:1.5mm; }
+  .audience p.action{ font-size:3.6mm; line-height:1.45; color:#3a3a36; }
+
+  /* ============ PANEL 6 : TAKE ACTION ============ */
+  .p-action{ background:var(--teal-deepest); color:var(--white); padding:14mm 10mm 10mm 11mm; }
+  .p-action .eyebrow{ color:var(--ochre); }
+  .p-action h2{ font-family:'Archivo Black'; font-size:9.5mm; color:var(--white); text-transform:uppercase; line-height:1.05; margin:3mm 0 6mm; }
+  .astep{ display:flex; gap:4mm; margin-bottom:5mm; align-items:flex-start; }
+  .astep .icon{ flex:0 0 8mm; width:8mm; height:8mm; color:var(--ochre); }
+  .astep h4{ font-family:'Barlow Condensed'; font-weight:700; font-size:4.6mm; text-transform:uppercase; margin-bottom:1mm; letter-spacing:0.2mm; }
+  .astep p{ font-size:3.6mm; line-height:1.45; opacity:0.9; }
+  .p-action .divider{ height:0.4mm; background:rgba(255,255,255,0.22); margin:6mm 0; }
+  .p-action h3{ font-family:'Barlow Condensed'; font-weight:700; font-size:5.2mm; text-transform:uppercase; color:var(--ochre); margin-bottom:3mm; }
+  .p-action ul{ list-style:none; }
+  .p-action ul li{ font-size:3.6mm; line-height:1.5; padding-left:4mm; position:relative; margin-bottom:2mm; opacity:0.92; }
+  .p-action ul li::before{ content:''; position:absolute; left:0; top:1.9mm; width:1.7mm; height:1.7mm; border-radius:50%; background:var(--ochre); }
+
+</style>
+</head>
+<body>
+
+<!-- ================= SHEET 1 : OUTSIDE ================= -->
+<div class="sheet">
+
+  <div class="panel p-context">
+    <div class="weave"></div>
+    <div class="eyebrow">Background</div>
+    <h2>Why this matters</h2>
+    <p>Teen mothers in Gakenke District face school dropout, stigma, discrimination and exclusion from health insurance. Community norms often treat teenage pregnancy as shameful &mdash; limiting education, healthcare and opportunity.</p>
+    <p>Rwanda has strong policies supporting girls' education and reintegration of adolescent mothers, but gaps in implementation persist at community level.</p>
+    <div class="statline">
+      <div class="num">8%</div>
+      <div class="cap">of girls aged 15&ndash;19 in Rwanda have experienced pregnancy</div>
+      <div class="src">Source: Rwanda Demographic &amp; Health Survey, 2025</div>
+    </div>
+    <div class="drivers">
+      <h4>Key drivers</h4>
+      <ul>
+        <li>Gender inequality and poverty</li>
+        <li>Harmful social norms &amp; weak protection</li>
+        <li>Limited awareness of support services</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel p-back">
+    <div class="top">
+      <div class="quote">Together, we build stronger families and stronger communities.</div>
+    </div>
+    <div class="mid">
+      <h4>Get involved</h4>
+      <p>Whether you lead a school, teach a classroom, raise a family, or simply care about your neighbours &mdash; you have a role in building a Rwanda where teen mothers are supported, not shut out. Reach out to your local WFI coordinator to bring this programme to your community.</p>
+    </div>
+    <div class="bottom">
+      <img src="assets/logo_white_transparent.png" alt="Whole Family Initiative">
+      <div class="org"><b>Whole Family Initiative (WFI) Rwanda</b>Gashenyi Sector, Gakenke District</div>
+      <div class="doc">Advocacy, Social &amp; Behaviour Change Communication (SBCC) and Community Engagement Strategy, 2026&ndash;2027</div>
+    </div>
+  </div>
+
+  <div class="panel p-cover">
+    <div class="weave"></div>
+    <div class="logostrip"><img src="assets/logo_white_transparent.png" alt="Whole Family Initiative"></div>
+    <div class="ribbon">Support today.<br>Empower tomorrow.</div>
+    <div class="headline">
+      <h1>Teen Mothers<span class="accent">Deserve More</span></h1>
+      <div class="tag">Health. Education. Dignity. Opportunity.</div>
+    </div>
+    <div class="photo"><img src="assets/hero_photo_upscaled.jpg" alt=""></div>
+    <div class="locline">Gashenyi Sector &middot; Gakenke District</div>
+  </div>
+
+</div>
+
+<!-- ================= SHEET 2 : INSIDE ================= -->
+<div class="sheet">
+
+  <div class="panel p-roles">
+    <div class="weave"></div>
+    <div class="eyebrow">Collective action</div>
+    <h2>Everyone has a role</h2>
+    <p>Creating a supportive environment for teen mothers requires every part of the community to play its part.</p>
+
+    <div class="role">
+      <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="14" r="6"/><path d="M10 39c0-9 6-14 14-14s14 5 14 14"/></svg>
+      <div><h4>Local leaders</h4><p>Champion inclusive policies and services at sector and cell level.</p></div>
+    </div>
+    <div class="role">
+      <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12l18-5 18 5-18 5z"/><path d="M6 12v14c5 4 13 6 18 6s13-2 18-6V12"/></svg>
+      <div><h4>Schools &amp; teachers</h4><p>Promote safe, welcoming and non-discriminatory learning environments.</p></div>
+    </div>
+    <div class="role">
+      <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 26h8l4-10 6 18 5-13 3 5h10"/></svg>
+      <div><h4>Health &amp; social workers</h4><p>Provide respectful, confidential and accessible services.</p></div>
+    </div>
+    <div class="role">
+      <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 40C10 30 4 22 4 15a9 9 0 0 1 16-6 9 9 0 0 1 16 6c0 7-6 15-20 25z"/></svg>
+      <div><h4>Families</h4><p>Offer acceptance, encouragement and practical day-to-day support.</p></div>
+    </div>
+    <div class="role">
+      <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="15" r="5"/><circle cx="33" cy="15" r="5"/><path d="M4 40c0-8 5-13 11-13s11 5 11 13M22 40c0-8 5-13 11-13s11 5 11 13"/></svg>
+      <div><h4>Communities &amp; peers</h4><p>Challenge stigma, promote inclusion, and stop discrimination.</p></div>
+    </div>
+  </div>
+
+  <div class="panel p-cando">
+    <div class="weave"></div>
+    <div class="eyebrow">Your part</div>
+    <h2>What you can do</h2>
+
+    <div class="audience">
+      <h4>School leaders &amp; teachers</h4>
+      <div class="msg">&ldquo;Every girl deserves a second chance.&rdquo;</div>
+      <p class="action">Create an inclusive school. Support reintegration pathways, and make sure returning mothers are welcomed, not whispered about.</p>
+    </div>
+
+    <div class="audience">
+      <h4>Parents &amp; caregivers</h4>
+      <div class="msg">&ldquo;Her future doesn't end with motherhood.&rdquo;</div>
+      <p class="action">Support your daughter and grandchild. Help her understand the education and health pathways still open to her.</p>
+    </div>
+
+    <div class="audience">
+      <h4>Students</h4>
+      <div class="msg">&ldquo;Support, don't stigmatise.&rdquo;</div>
+      <p class="action">Avoid bullying and exclusion. Welcome classmates who are teen mothers back into school life.</p>
+    </div>
+
+    <div class="audience">
+      <h4>Community members</h4>
+      <div class="msg">&ldquo;Supporting teen mothers strengthens us all.&rdquo;</div>
+      <p class="action">Challenge gossip and judgement when you hear it. Encourage, don't isolate.</p>
+    </div>
+  </div>
+
+  <div class="panel p-action">
+    <div class="weave"></div>
+    <div class="eyebrow">Take action</div>
+    <h2>See her.<br>Support her.</h2>
+
+    <div class="astep">
+      <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 24a10 10 0 0 1 20 0c0 6-4 8-4 14"/><circle cx="30" cy="40" r="2.5" fill="currentColor" stroke="none"/></svg>
+      <div><h4>Listen</h4><p>Give her a safe space to be heard, without judgement.</p></div>
+    </div>
+    <div class="astep">
+      <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 40C10 30 4 22 4 15a9 9 0 0 1 16-6 9 9 0 0 1 16 6c0 7-6 15-20 25z"/></svg>
+      <div><h4>Encourage</h4><p>Let her know she is not alone in this journey.</p></div>
+    </div>
+    <div class="astep">
+      <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="24" r="6"/><circle cx="36" cy="12" r="6"/><circle cx="36" cy="36" r="6"/><path d="M17 21l14-6M17 27l14 6"/></svg>
+      <div><h4>Connect</h4><p>Link her to health, education and social support services.</p></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>Support, don't stigmatise</h3>
+    <ul>
+      <li>Listen without judgement and give encouragement.</li>
+      <li>Challenge negative stereotypes and discriminatory attitudes.</li>
+      <li>Protect teen mothers from exclusion and humiliation.</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
